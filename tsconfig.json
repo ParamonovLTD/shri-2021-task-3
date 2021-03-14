@@ -1,14 +1,14 @@
 {
-    "compilerOptions": {
-        "outDir": "dist",
-        "noImplicitAny": true,
-        "module": "es6",
-        "target": "es5",
-        "allowJs": true,
-        "moduleResolution": "node",
-        // Добавлю некоторые настройки для отладки и удобства работы
-        "sourceMap": true,  
-        "noEmitOnError": true,
-        "strict": true,
-    }
+  "compilerOptions": {
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5", //изменил на es6, чтобы работали Symbol, как минимум
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Добавлю некоторые настройки для отладки и удобства работы
+    "sourceMap": true,
+    "noEmitOnError": true
+    // "strict": true
+  }
 }
