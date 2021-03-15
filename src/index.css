@@ -38,8 +38,11 @@ body {
 }
 
 .slide-progress-value {
-  height: 4;
+  /* Добавил px, отловлено в devTools */
+  height: 4px;
   background-color: #f4b000;
+  /* При загрузке страницы все прогресс-бары заполнены, исправляет это */
+  transform: scaleX(0);
   transition: transform 0.1s linear;
   transform-origin: left top;
 }

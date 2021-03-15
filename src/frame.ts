@@ -21,7 +21,7 @@ function receiveMessage({ data }: MessageEvent<XMessage>) {
     document.body.innerHTML = window.renderTemplate(data.alias, data.data)
   } else if (data.type === 'message@SET_THEME') {
     setElementTheme(document.body, data.theme)
-  } // Добавить ACTION
+  }
 }
 
 function onDocumentClick(e: MouseEvent) {

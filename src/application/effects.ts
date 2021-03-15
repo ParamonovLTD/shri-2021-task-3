@@ -18,6 +18,8 @@ import {
 } from './actions'
 import { DELAY, INTERVAL, Slide, State } from './types'
 
+import { stories } from '../data' // импортирую, чтобы понять, сколько раз должен делаться переход на следующую сторис
+
 export function ofType<T extends Action>(
   type: Action['type']
 ): MonoTypeOperatorFunction<T> {
@@ -33,7 +35,7 @@ export function createEffects(
   const changeSlideEffect$ = timerEffect$.pipe(
     withLatestFrom(state$),
     mergeMap(([a, s]) => (s.progress >= DELAY ? of(actionNext()) : EMPTY)),
-    take(5)
+    take(stories.length - 1) // повторяется столько раз, сколько сторис, а не фиксированное значение
   )
 
   const messageEffect$ = actions$.pipe(
