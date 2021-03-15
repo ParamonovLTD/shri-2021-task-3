@@ -31,7 +31,6 @@ export const data = produce((draft: Draft<State>, action: Action) => {
       draft.index = Math.max(draft.index - 1, 0)
       break
     case 'next':
-      // Убрал +1 у draft.index, тк index'ы и длина Stories начинается с 0, а тк у нас строгое сравнение, +1 лишний
       if (draft.index + 1 < draft.stories.length) {
         draft.index++
         draft.progress = 0
@@ -49,7 +48,7 @@ export const data = produce((draft: Draft<State>, action: Action) => {
       const { alias, data } = action.data
 
       if (alias) {
-        draft.stories[0].alias = alias // В теории тут должен быть index
+        draft.stories[0].alias = alias // Возможно тут должен быть index
       }
 
       if (data) {

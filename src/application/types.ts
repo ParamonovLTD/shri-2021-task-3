@@ -1,31 +1,31 @@
-export const INTERVAL = 100;
-export const DELAY = 7000;
+export const INTERVAL = 100
+export const DELAY = 7000
 
 export interface Slide {
-    alias: string;
-    data: object;
+  alias: string
+  data: object
 }
 
-export type SlideTheme = 'light' | 'dark';
+export type SlideTheme = 'light' | 'dark'
 
 export interface State {
-    theme: SlideTheme;
-    stories: Slide[];
-    index: number;
-    progress: number;
-    pause: boolean;
+  theme: SlideTheme
+  stories: Slide[]
+  index: number
+  progress: number
+  pause: boolean
 }
 
 const hasSymbol =
-    typeof Symbol !== 'undefined' && typeof Symbol('x') === 'symbol';
+  typeof Symbol !== 'undefined' && typeof Symbol('x') === 'symbol'
 
 export const DRAFT_STATE: unique symbol = hasSymbol
-    ? Symbol.for('state')
-    : ('state' as any);
+  ? Symbol.for('state')
+  : ('state' as any)
 
-export const descriptors: { [prop: string]: PropertyDescriptor } = {};
+export const descriptors: { [prop: string]: PropertyDescriptor } = {}
 
 export const errors = {
-    0: 'Illegal state',
-    1: 'Drafts cannot have computed properties',
-};
+  0: 'Illegal state',
+  1: 'Drafts cannot have computed properties',
+}

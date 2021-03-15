@@ -33,7 +33,7 @@ export function createEffects(
   const changeSlideEffect$ = timerEffect$.pipe(
     withLatestFrom(state$),
     mergeMap(([a, s]) => (s.progress >= DELAY ? of(actionNext()) : EMPTY))
-    // take(5) // Эта строка нам не нужна, тк ограничивает количество переходов, переходы должны все время осуществляться, только если это не последний слайд, а на это у нас есть проверка
+    // take(5) // Эта строка нам не нужна, тк ограничивает количество переходов. Переходы должны все время осуществляться, только если это не последний слайд, а на это у нас есть проверка
   )
 
   const messageEffect$ = actions$.pipe(

@@ -38,8 +38,8 @@ const player = document.querySelector<HTMLDivElement>('.player')! // Гаран�
 const frames = stories.map(({ alias, data }) =>
   initIframe(player, iframe => {
     sendMessage(iframe, messageUpdate(alias, data))
+    // Добавляю условие, чтобы !== null
     if (iframe.contentWindow) {
-      // Добавляю условие, чтобы !== null
       iframe.contentWindow.addEventListener('message', onMessage)
     }
   })

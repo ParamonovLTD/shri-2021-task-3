@@ -9,6 +9,5 @@
     // Добавлю некоторые настройки для отладки и удобства работы
     "sourceMap": true,
     "noEmitOnError": true
-    // "strict": true
   }
 }

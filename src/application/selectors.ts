@@ -1,5 +1,5 @@
 import { EMPTY, Observable } from 'rxjs'
-import { distinctUntilChanged, map, mergeMapTo } from 'rxjs/operators'
+import { distinctUntilChanged, map, mergeMapTo } from 'rxjs/operators' // Для оптимизации можно убрать неиспульзуемые функции
 import { DELAY, Slide, State } from './types'
 
 interface SlideData<T> {
