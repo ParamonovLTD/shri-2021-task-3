@@ -1,108 +1,115 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 .player-container {
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .player {
-    display: flex;
-    flex-direction: row;
-    transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: row;
+  transition: all ease-in-out 0.3s;
 }
 
 .progress-container {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    right: 2px;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
 }
 
 .slide-progress {
-    flex-grow: 1;
-    margin: 2px;
-    background-clip: content-box;
-    border-radius: 2px;
-    overflow: hidden;
+  flex-grow: 1;
+  margin: 2px;
+  background-clip: content-box;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .slide-progress-value {
-    height: 4;
-    background-color: #F4B000;
-    transition: transform 0.1s linear;
-    transform-origin: left top;
+  height: 4;
+  background-color: #f4b000;
+  transition: transform 0.1s linear;
+  transform-origin: left top;
 }
 
 .frame {
-    width: 100vw;
-    height: 100vh;
-    flex-shrink: 0;
-    border: none;
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  border: none;
 }
 
 .actions {
-    position: absolute;
-    top: 20px;
-    right: 10px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }
 
 .button {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    user-select: none;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .prev {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-@media (max-height: 750px) { 
+/* @media (max-height: 750px) { 
     .prev {
         display: none;
     }
-}
+} */
+/* это свойство просто убирает кнопку на маленьких в высоту экранах, абсолютно ненужное, найдено в devtools */
 
 .theme_light .button {
-    color: #BFBFBF;
+  color: #bfbfbf;
 }
 
 .theme_light .button:hover {
-    color: #F4B000;
+  color: #f4b000;
 }
 
 .theme_light .slide-progress {
-    background: #bfbfbf88;
+  background: #bfbfbf88;
 }
 
 .theme_light .set-light {
-    display: none;
+  display: none;
 }
+/* Добавляю это свойство для того, чтобы кнопка скрывалась при светлой теме, по аналогии с темной */
+
+/* .theme_light .set-light {
+  display: none;
+} */
+/* очевидно ненужное свойство, найдено в devtools */
 
 .theme_dark .button {
-    color: #918F8A;
+  color: #918f8a;
 }
 
 .theme_dark .button:hover {
-    color: #F4B000;
+  color: #f4b000;
 }
 
 .theme_dark .slide-progress {
-    background: #918F8A;
+  background: #918f8a;
 }
 
 .theme_dark .set-dark {
-    display: none;
+  display: none;
 }
